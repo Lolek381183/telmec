@@ -35,7 +35,8 @@
 
 video {
   height: 250px;
-  max-width: 500px;
+
+  width: 100%;
 }
 
 .Big__container {
