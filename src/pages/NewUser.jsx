@@ -9,7 +9,7 @@ class Newuser extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      backend: "https://telemec.herokuapp.com",
+      backend: "http://backend.telemec.health",
     };
   }
   componentDidMount() {

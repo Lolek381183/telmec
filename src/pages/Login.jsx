@@ -20,7 +20,7 @@ class Login extends React.Component {
         Email: "",
         Password: "",
       },
-      backend: "https://telemec.herokuapp.com",
+      backend: "http://backend.telemec.health",
     };
   }
 
@@ -104,6 +104,7 @@ class Login extends React.Component {
       { withCredentials: true }
     ).then((response) => {
       console.log(response);
+      console.log("Si ac");
       this.props.history.push("/");
     });
   };

@@ -18,7 +18,7 @@ class Room extends React.Component {
       localMediaAvailable: true,
       hasJoinedRoom: false,
       activeRoom: null,
-      backend: "https://telemec.herokuapp.com",
+      backend: "http://backend.telemec.health",
     };
     this.fersd = React.createRef();
     this.joinRoom = this.joinRoom.bind(this);
