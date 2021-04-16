@@ -103,7 +103,8 @@ class Login extends React.Component {
       },
       { withCredentials: true }
     ).then((response) => {
-      console.log("ddasd");
+      console.log(response);
+      this.props.history.push("/");
     });
   };
 
