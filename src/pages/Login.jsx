@@ -20,7 +20,7 @@ class Login extends React.Component {
         Email: "",
         Password: "",
       },
-      backend: "http://backend.telemec.health",
+      backend: "https://backend.telemec.health",
     };
   }
 

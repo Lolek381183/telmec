@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     this.state = {
       login: true,
       nombre: "",
-      backend: "http://backend.telemec.health",
+      backend: "https://backend.telemec.health",
     };
   }
 
