@@ -61,11 +61,11 @@ class Navbar extends React.Component {
               ""
             ) : (
               <Link
-                to="/login"
+                to="/room"
                 className="MenuButton__text text-reset text-decoration-none"
               >
                 <div className="Data__container">
-                  <span className="MenuButton__text">Registros</span>
+                  <span className="MenuButton__text">Sala</span>
                 </div>
               </Link>
             )}
