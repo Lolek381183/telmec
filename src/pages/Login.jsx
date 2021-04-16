@@ -103,7 +103,7 @@ class Login extends React.Component {
       },
       { withCredentials: true }
     ).then((response) => {
-      console.log(response);
+      console.log("ddasd");
     });
   };
 
