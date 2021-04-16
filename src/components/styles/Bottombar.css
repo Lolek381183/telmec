@@ -1,0 +1,35 @@
+.Bottombar__outer {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 150px;
+  width: 100%;
+}
+
+.Bottombar__inner {
+  padding-top: 10px;
+  width: 60%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: white;
+}
+
+.Partner__img__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Partner__img {
+  height: 80px;
+}
+
+.Copy__text__outter {
+  padding-top: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.Copy__text__inner {
+  color: white;
+  margin: 0 auto;
+}
