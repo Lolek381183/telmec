@@ -40,7 +40,7 @@ class Navbar extends React.Component {
               <img className="Logo__image" src={Logo} alt="Logo" />
             </div>
             <div className="Logo__Title">
-              <span>Telemec</span>
+              <span>TeleHealth</span>
             </div>
           </Link>
           <div className="Pages__container">
@@ -52,7 +52,7 @@ class Navbar extends React.Component {
                 className="MenuButton__text text-reset text-decoration-none"
               >
                 <div className="illness__container">
-                  <span className="MenuButton__text">Nuevo Usuario</span>
+                  <span className="MenuButton__text">Pacientes</span>
                 </div>
               </Link>
             )}
@@ -61,11 +61,11 @@ class Navbar extends React.Component {
               ""
             ) : (
               <Link
-                to="/room"
+                to="/consultaNP"
                 className="MenuButton__text text-reset text-decoration-none"
               >
                 <div className="Data__container">
-                  <span className="MenuButton__text">Sala</span>
+                  <span className="MenuButton__text">Consulta NP</span>
                 </div>
               </Link>
             )}

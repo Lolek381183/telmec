@@ -30,11 +30,9 @@ class Newuser extends React.Component {
         <Navbar></Navbar>
         <div className="New__user">
           <div className="New__user__inner">
-            <div></div>
             <div>
               <RegisterFrom />
             </div>
-            <div></div>
           </div>
         </div>
         <Bottombar></Bottombar>
