@@ -470,7 +470,7 @@ class ConsultaForm extends React.Component {
                   value={
                     "Hola Sr/Sra " +
                     this.state.form.Primer_nombre +
-                    " su link para la consulta es https://telemec.health/roompub/" +
+                    " su link para la consulta es https://www.telemec.health/roompub/" +
                     this.state.Numero_identificacion +
                     " su pin es " +
                     this.state.form.pin
