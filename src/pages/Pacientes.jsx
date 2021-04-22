@@ -9,7 +9,7 @@ class Paciente extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
     };
   }
   componentDidMount() {

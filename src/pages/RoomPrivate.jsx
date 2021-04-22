@@ -7,7 +7,7 @@ import Bottombar from "../components/Bottombar.jsx";
 
 import ConsultaForm from "../components/ConsultaFrom.jsx";
 
-class Room extends React.Component {
+class RoomPrivate extends React.Component {
   constructor(props) {
     super(props);
     const { parameter1 } = this.props.match.params;
@@ -19,7 +19,7 @@ class Room extends React.Component {
       localMediaAvailable: true,
       hasJoinedRoom: false,
       activeRoom: null,
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
     };
     this.fersd = React.createRef();
     this.joinRoom = this.joinRoom.bind(this);
@@ -249,4 +249,4 @@ class Room extends React.Component {
   }
 }
 
-export default Room;
+export default RoomPrivate;

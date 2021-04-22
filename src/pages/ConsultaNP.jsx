@@ -12,7 +12,7 @@ class newRegister extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
       form: {
         Numero_identificacion_buscar: "",
       },
@@ -99,7 +99,9 @@ class newRegister extends React.Component {
                 </div>
                 <div></div>
                 <Link
-                  to={"/room/" + this.state.form.Numero_identificacion_buscar}
+                  to={
+                    "/roompri/" + this.state.form.Numero_identificacion_buscar
+                  }
                 >
                   <div className="Consultanp__seleccionar__item">
                     {" "}
