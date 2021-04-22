@@ -5,10 +5,8 @@
 .New__register__inner {
   padding-top: 30px;
   padding-bottom: 30px;
-  display: grid;
-  grid-template-columns: 45% 10% 45%;
   margin: 0 auto;
-  width: 80%;
+  width: 65%;
 }
 
 .Text__container__register {

@@ -89,14 +89,21 @@ class newRegister extends React.Component {
             </div>
             <div id="Seleccionar">
               <div className="Consultanp__seleccionar">
-                <div className="Consultanp__seleccionar__item">
-                  CONSULTA PRESENCIAL <br />
-                  <img
-                    src={Presencial}
-                    alt=""
-                    className="Consultanp__seleccionar__img__1"
-                  />
-                </div>
+                <Link
+                  to={
+                    "/presencial/" +
+                    this.state.form.Numero_identificacion_buscar
+                  }
+                >
+                  <div className="Consultanp__seleccionar__item">
+                    CONSULTA PRESENCIAL <br />
+                    <img
+                      src={Presencial}
+                      alt=""
+                      className="Consultanp__seleccionar__img__1"
+                    />
+                  </div>
+                </Link>
                 <div></div>
                 <Link
                   to={

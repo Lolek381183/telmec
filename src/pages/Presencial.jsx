@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterFrom from "../components/RegisterForm.jsx";
+
 import ConsultaForm from "../components/ConsultaFrom.jsx";
 import "./styles/Newregister.css";
 import Axios from "axios";
@@ -8,8 +8,10 @@ import Navbar from "../components/Navbar";
 
 class Presencial extends React.Component {
   constructor(props) {
-    super();
+    super(props);
+    const { parameter1 } = this.props.match.params;
     this.state = {
+      roomName: parameter1,
       backend: "https://backend.telemec.health",
     };
   }
@@ -32,11 +34,7 @@ class Presencial extends React.Component {
         <div className="New__register">
           <div className="New__register__inner">
             <div>
-              <RegisterFrom />
-            </div>
-            <div></div>
-            <div>
-              <ConsultaForm />
+              <ConsultaForm Numero_identificacion={this.state.roomName} />
             </div>
           </div>
         </div>

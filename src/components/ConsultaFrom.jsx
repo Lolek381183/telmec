@@ -3,50 +3,68 @@ import Axios from "axios";
 import "./styles/RegisterForm.css";
 
 class ConsultaForm extends React.Component {
-  state = {
-    counter: 0,
-    Paciente_encontrado: "",
-    backend: "https://backend.telemec.health",
-    form: {
-      Primer_nombre: "",
-      Segundo_nombre: "",
-      Primer_apellido: "",
-      Segundo_apellido: "",
-      Tipo_identificacion: "",
-      Numero_identificacion: "",
-      Estado_paciente: "",
-      Pais_origen: "",
-      Estado_civil: "",
-      Sexo: "",
-      Fecha_nacimiento: "",
-      Edad: "",
-      Lugar_nacimiento: "",
-      Escolaridad: "",
-      Ocupacion: "",
-      Pais: "",
-      Detalles_ocupacion: "",
-      Barrio: "",
-      Zona_residencial: "",
-      Direccion_residencial: "",
-      Telefono: "",
-      Celular: "",
-      Email: "",
-      Entidad: "",
-      Tipo_aseguramiento: "",
-      Nombre_responsable: "",
-      Apellido_responsable: "",
-      Tipo_identificacion_responsable: "",
-      Numero_identificacion_responsable: "",
-      Telefono_responsable: "",
-      Parentezco_responsable: "",
-      Fecha_nacimiento_responsable: "",
-      Email_responsable: "",
-      Religion: "",
-      Tipo_sangre: "",
-      Observaciones: "",
-      Numero_identificacion_buscar: "",
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+      Paciente_encontrado: "",
+      backend: "https://backend.telemec.health",
+      Numero_identificacion: this.props.Numero_identificacion,
+      form: {
+        Primer_nombre: "",
+        Segundo_nombre: "",
+        Primer_apellido: "",
+        Segundo_apellido: "",
+        Tipo_identificacion: "",
+        Numero_identificacion: "",
+        Estado_paciente: "",
+        Pais_origen: "",
+        Estado_civil: "",
+        Sexo: "",
+        Fecha_nacimiento: "",
+        Edad: "",
+        Lugar_nacimiento: "",
+        Escolaridad: "",
+        Ocupacion: "",
+        Pais: "",
+        Detalles_ocupacion: "",
+        Barrio: "",
+        Zona_residencial: "",
+        Direccion_residencial: "",
+        Telefono: "",
+        Celular: "",
+        Email: "",
+        Entidad: "",
+        Tipo_aseguramiento: "",
+        Nombre_responsable: "",
+        Apellido_responsable: "",
+        Tipo_identificacion_responsable: "",
+        Numero_identificacion_responsable: "",
+        Telefono_responsable: "",
+        Parentezco_responsable: "",
+        Fecha_nacimiento_responsable: "",
+        Email_responsable: "",
+        Religion: "",
+        Tipo_sangre: "",
+        Observaciones: "",
+        Numero_identificacion_buscar: "",
+        pin: "",
+      },
+      form1: {
+        Motivo_consulta: "",
+        Enfermedad_actual: "",
+        Revision_sistemas: "",
+        Antecedentes_personales: "",
+        Examen_fisico: "",
+        Ayudas_diagnosticas: "",
+        Diagnostico: "",
+        Analisis: "",
+        Conducta: "",
+        Observaciones: "",
+      },
+    };
+    this.lookPatient();
+  }
   componentDidMount() {
     this.setComponent(0);
     this.setState({
@@ -111,53 +129,26 @@ class ConsultaForm extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      form: { ...this.state.form, [e.target.name]: e.target.value },
+      form1: { ...this.state.form1, [e.target.name]: e.target.value },
     });
   };
 
-  addPatient = (e) => {
-    Axios.post(this.state.backend + "/create", {
-      Primer_nombre: this.state.form.Primer_nombre,
-      Segundo_nombre: this.state.form.Segundo_nombre,
-      Primer_apellido: this.state.form.Primer_apellido,
-      Segundo_apellido: this.state.form.Segundo_apellido,
-      Tipo_identificacion: this.state.form.Tipo_identificacion,
-      Numero_identificacion: this.state.form.Numero_identificacion,
-      Estado_paciente: this.state.form.Estado_paciente,
-      Pais_origen: this.state.form.Pais_origen,
-      Estado_civil: this.state.form.Estado_civil,
-      Sexo: this.state.form.Sexo,
-      Fecha_nacimiento: this.state.form.Fecha_nacimiento,
-      Edad: this.state.form.Edad,
-      Lugar_nacimiento: this.state.form.Lugar_nacimiento,
-      Escolaridad: this.state.form.Escolaridad,
-      Ocupacion: this.state.form.Ocupacion,
-      Pais: this.state.form.Pais,
-      Detalles_ocupacion: this.state.form.Detalles_ocupacion,
-      Barrio: this.state.form.Barrio,
-      Zona_residencial: this.state.form.Zona_residencial,
-      Direccion_residencial: this.state.form.Direccion_residencial,
-      Telefono: this.state.form.Telefono,
-      Celular: this.state.form.Celular,
-      Email: this.state.form.Email,
-      Entidad: this.state.form.Entidad,
-      Tipo_aseguramiento: this.state.form.Tipo_aseguramiento,
-      Nombre_responsable: this.state.form.Nombre_responsable,
-      Apellido_responsable: this.state.form.Apellido_responsable,
-      Tipo_identificacion_responsable: this.state.form
-        .Tipo_identificacion_responsable,
-      Numero_identificacion_responsable: this.state.form
-        .Numero_identificacion_responsable,
-      Telefono_responsable: this.state.form.Telefono_responsable,
-      Parentezco_responsable: this.state.form.Parentezco_responsable,
-      Fecha_nacimiento_responsable: this.state.form
-        .Fecha_nacimiento_responsable,
-      Email_responsable: this.state.form.Email_responsable,
-      Religion: this.state.form.Religion,
-      Tipo_sangre: this.state.form.Tipo_sangre,
-      Observaciones: this.state.form.Observaciones,
+  addHistory = (e) => {
+    console.log(this.state.form1);
+    Axios.post(this.state.backend + "/createhistory", {
+      Numero_identificacion: this.state.Numero_identificacion,
+      Motivo_consulta: this.state.form1.Motivo_consulta,
+      Enfermedad_actual: this.state.form1.Enfermedad_actual,
+      Revision_sistemas: this.state.form1.Revision_sistemas,
+      Antecedentes_personales: this.state.form1.Antecedentes_personales,
+      Examen_fisico: this.state.form1.Examen_fisico,
+      Ayudas_diagnosticas: this.state.form1.Ayudas_diagnosticas,
+      Diagnostico: this.state.form1.Diagnostico,
+      Analisis: this.state.form1.Analisis,
+      Conducta: this.state.form1.Conducta,
+      Observaciones: this.state.form1.Observaciones,
     }).then((response) => {
-      alert("Paciente Creado");
+      alert("Historia Creada");
       console.log(response);
     });
   };
@@ -165,10 +156,14 @@ class ConsultaForm extends React.Component {
   lookPatient = (e) => {
     Axios.get(this.state.backend + "/look", {
       params: {
-        Numero_identificacion: this.state.form.Numero_identificacion_buscar,
+        Numero_identificacion: this.state.Numero_identificacion,
       },
     }).then((response) => {
       if (response.data[0] !== undefined) {
+        var x = this.state.Numero_identificacion;
+        var y = 0;
+        var r = "";
+        x.split("").forEach((x) => (y += parseInt(x)));
         this.setState({
           form: {
             Primer_nombre: response.data[0].primer_nombre,
@@ -212,70 +207,11 @@ class ConsultaForm extends React.Component {
             Observaciones: response.data[0].observaciones,
             Numero_identificacion_buscar:
               response.data[0].numero_identificacion,
+            pin: r.concat(y, y),
           },
         });
-        alert("Paciente encontrado");
       } else {
-        alert("Paciente no encontrado");
       }
-    });
-  };
-
-  deletePatient = (e) => {
-    console.log(this.state.form.Numero_identificacion_buscar);
-    if (this.state.form.Numero_identificacion_buscar !== "") {
-      Axios.delete(
-        this.state.backend +
-          `/delete/${this.state.form.Numero_identificacion_buscar}`
-      ).then((response) => {
-        alert("Paciente Eliminado");
-      });
-    }
-  };
-
-  updatePatient = (e) => {
-    Axios.put(this.state.backend + "/update", {
-      Primer_nombre: this.state.form.Primer_nombre,
-      Segundo_nombre: this.state.form.Segundo_nombre,
-      Primer_apellido: this.state.form.Primer_apellido,
-      Segundo_apellido: this.state.form.Segundo_apellido,
-      Tipo_identificacion: this.state.form.Tipo_identificacion,
-      Numero_identificacion: this.state.form.Numero_identificacion,
-      Estado_paciente: this.state.form.Estado_paciente,
-      Pais_origen: this.state.form.Pais_origen,
-      Estado_civil: this.state.form.Estado_civil,
-      Sexo: this.state.form.Sexo,
-      Fecha_nacimiento: this.state.form.Fecha_nacimiento,
-      Edad: this.state.form.Edad,
-      Lugar_nacimiento: this.state.form.Lugar_nacimiento,
-      Escolaridad: this.state.form.Escolaridad,
-      Ocupacion: this.state.form.Ocupacion,
-      Pais: this.state.form.Pais,
-      Detalles_ocupacion: this.state.form.Detalles_ocupacion,
-      Barrio: this.state.form.Barrio,
-      Zona_residencial: this.state.form.Zona_residencial,
-      Direccion_residencial: this.state.form.Direccion_residencial,
-      Telefono: this.state.form.Telefono,
-      Celular: this.state.form.Celular,
-      Email: this.state.form.Email,
-      Entidad: this.state.form.Entidad,
-      Tipo_aseguramiento: this.state.form.Tipo_aseguramiento,
-      Nombre_responsable: this.state.form.Nombre_responsable,
-      Apellido_responsable: this.state.form.Apellido_responsable,
-      Tipo_identificacion_responsable: this.state.form
-        .Tipo_identificacion_responsable,
-      Numero_identificacion_responsable: this.state.form
-        .Numero_identificacion_responsable,
-      Telefono_responsable: this.state.form.Telefono_responsable,
-      Parentezco_responsable: this.state.form.Parentezco_responsable,
-      Fecha_nacimiento_responsable: this.state.form
-        .Fecha_nacimiento_responsable,
-      Email_responsable: this.state.form.Email_responsable,
-      Religion: this.state.form.Religion,
-      Tipo_sangre: this.state.form.Tipo_sangre,
-      Observaciones: this.state.form.Observaciones,
-    }).then((response) => {
-      alert("Producto actualizado");
     });
   };
 
@@ -290,17 +226,17 @@ class ConsultaForm extends React.Component {
                   <span>Historia Cliníca Consulta</span>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="">Detalles de ocupación</label>
+                  <label htmlFor="">Motivo de consulta</label>
                   <textarea
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Motivo_consulta"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Motivo_consulta}
                   />
                 </div>
 
@@ -310,12 +246,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Enfermedad_actual"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Enfermedad_actual}
                   />
                 </div>
 
@@ -325,12 +261,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Revision_sistemas"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Revision_sistemas}
                   />
                 </div>
                 <div className="form-group">
@@ -339,12 +275,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Antecedentes_personales"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Antecedentes_personales}
                   />
                 </div>
                 <div className="form-group">
@@ -353,12 +289,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Examen_fisico"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Examen_fisico}
                   />
                 </div>
               </form>
@@ -374,12 +310,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Ayudas_diagnosticas"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Ayudas_diagnosticas}
                   />
                 </div>
 
@@ -389,12 +325,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Diagnostico"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Diagnostico}
                   />
                 </div>
 
@@ -404,12 +340,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Analisis"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Analisis}
                   />
                 </div>
                 <div className="form-group">
@@ -418,12 +354,12 @@ class ConsultaForm extends React.Component {
                     className="form-control large"
                     style={{ height: "80px" }}
                     type="text"
-                    name="Detalles_ocupacion"
+                    name="Conducta"
                     onChange={(value) => {
                       this.handleChange(value);
                     }}
                     id="17"
-                    value={this.state.form.Detalles_ocupacion}
+                    value={this.state.form1.Conducta}
                   />
                 </div>
                 <div className="Button__obver">
@@ -437,11 +373,11 @@ class ConsultaForm extends React.Component {
                         this.handleChange(value);
                       }}
                       id="36"
-                      value={this.state.form.Observaciones}
+                      value={this.state.form1.Observaciones}
                     />
                   </div>
                   <div></div>
-                  <div className="Button__arriba" onClick={this.addPatient}>
+                  <div className="Button__arriba" onClick={this.addHistory}>
                     <div className="Button__Crear">AGREGAR</div>
                   </div>
                 </div>
@@ -471,7 +407,7 @@ class ConsultaForm extends React.Component {
           <div className="Registerform__borrar__actualizar">
             <div className="Registerform__borrar__actualizar__inner">
               <div className="Text__container__title">
-                <span>Encuentra Pacientes</span>
+                <span>Informacion Paciente</span>
               </div>
               <div className="form-group">
                 <label htmlFor="">Número de identificación</label>
@@ -480,46 +416,70 @@ class ConsultaForm extends React.Component {
                   type="text"
                   style={{ height: "40px" }}
                   name="Numero_identificacion_buscar"
-                  onChange={this.handleChange}
+                  value={this.state.Numero_identificacion}
                   id="37"
                 />
-                <div className="Button__arriba" onClick={this.lookPatient}>
-                  <div className="Button__Crear">BUSCAR</div>
-                </div>
-                <div className="Button__arriba" onClick={this.updatePatient}>
-                  <div className="Button__Crear">ACTUALIZAR</div>
-                </div>
-                <div className="Button__arriba" onClick={this.deletePatient}>
-                  <div className="Button__Crear">BORRAR</div>
-                </div>
+                <label htmlFor="">Nombre</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  style={{ height: "40px" }}
+                  name="Numero_identificacion_buscar"
+                  value={
+                    this.state.form.Primer_nombre +
+                    " " +
+                    this.state.form.Segundo_nombre
+                  }
+                  id="37"
+                />
+                <label htmlFor="">Apellido</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  style={{ height: "40px" }}
+                  name="Numero_identificacion_buscar"
+                  value={
+                    this.state.form.Primer_apellido +
+                    " " +
+                    this.state.form.Segundo_apellido
+                  }
+                  id="37"
+                />
+                <label htmlFor="">Edad</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  style={{ height: "40px" }}
+                  name="Numero_identificacion_buscar"
+                  value={this.state.form.Edad + " Años"}
+                  id="37"
+                />
               </div>
             </div>
             <div className="Registerform__borrar__actualizar__inner">
               <div className="Text__container__title">
-                <span>Agendar una cita</span>
+                <span>Invita tu paciente a la sala</span>
               </div>
               <div className="form-group">
-                <label htmlFor="">Fecha</label>
-                <input
+                <label htmlFor="">Link</label>
+                <textarea
                   className="form-control"
-                  type="date"
-                  style={{ height: "40px" }}
+                  type="text"
+                  style={{ height: "100px" }}
                   name="Numero_identificacion_buscar"
-                  onChange={this.handleChange}
-                  id="6"
-                />
-                <label htmlFor="">Hora</label>
-                <input
-                  className="form-control"
-                  type="hour"
-                  style={{ height: "40px" }}
-                  name="Numero_identificacion_buscar"
-                  onChange={this.handleChange}
+                  value={
+                    "Hola Sr/Sra " +
+                    this.state.form.Primer_nombre +
+                    " su link para la consulta es https://telemec.health/roompub/" +
+                    this.state.Numero_identificacion +
+                    " su pin es " +
+                    this.state.form.pin
+                  }
                   id="6"
                 />
 
-                <div className="Button__arriba" onClick={this.lookPatient}>
-                  <div className="Button__Crear">AGENDAR</div>
+                <div className="Button__arriba">
+                  <div className="Button__Crear">COMPARTIR</div>
                 </div>
               </div>
             </div>
