@@ -11,7 +11,7 @@ class Navbar extends React.Component {
     this.state = {
       login: true,
       nombre: "",
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
     };
   }
 
@@ -48,7 +48,7 @@ class Navbar extends React.Component {
               ""
             ) : (
               <Link
-                to="/newuser"
+                to="/pacientes"
                 className="MenuButton__text text-reset text-decoration-none"
               >
                 <div className="illness__container">

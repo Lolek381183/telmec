@@ -5,11 +5,11 @@ import Axios from "axios";
 import Bottombar from "../components/Bottombar";
 import Navbar from "../components/Navbar";
 
-class Newuser extends React.Component {
+class Paciente extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
     };
   }
   componentDidMount() {
@@ -41,4 +41,4 @@ class Newuser extends React.Component {
   }
 }
 
-export default Newuser;
+export default Paciente;

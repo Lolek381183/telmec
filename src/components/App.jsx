@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "../pages/Login.jsx";
 import Home from "../pages/Home.jsx";
 import Room from "../pages/Room.jsx";
-import Newuser from "../pages/NewUser.jsx";
-import Newregister from "../pages/NewRegister";
+import Paciente from "../pages/Pacientes.jsx";
+import ConsultaNP from "../pages/ConsultaNP";
 import Presencial from "../pages/Presencial";
 
 class App extends React.Component {
@@ -14,9 +14,12 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/" component={Home} />
-          <Route exact path="/room" component={Room} />
-          <Route exact path="/newuser" component={Newuser} />
-          <Route exact path="/consultaNP" component={Newregister} />
+          <Route
+            path="/room/:parameter1"
+            render={(props) => <Room {...props} />}
+          />
+          <Route exact path="/pacientes" component={Paciente} />
+          <Route exact path="/consultaNP" component={ConsultaNP} />
           <Route exact path="/presencial" component={Presencial} />
         </Switch>
       </BrowserRouter>

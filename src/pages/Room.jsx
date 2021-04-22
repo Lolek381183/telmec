@@ -9,16 +9,17 @@ import ConsultaForm from "../components/ConsultaFrom.jsx";
 
 class Room extends React.Component {
   constructor(props) {
-    super();
+    super(props);
+    const { parameter1 } = this.props.match.params;
     this.state = {
       identity: null,
-      roomName: "Maleta",
+      roomName: parameter1,
       roomNameErr: false,
       previewTracks: null,
       localMediaAvailable: true,
       hasJoinedRoom: false,
       activeRoom: null,
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
     };
     this.fersd = React.createRef();
     this.joinRoom = this.joinRoom.bind(this);

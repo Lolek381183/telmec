@@ -1,0 +1,58 @@
+.Consultanp__outter {
+  width: 100%;
+  position: relative;
+}
+
+.Consultanp__inner {
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Blank__Space {
+  width: 100%;
+  height: 200px;
+}
+
+.Consultanp__pad {
+  padding-bottom: 15px;
+}
+
+.Consultanp__seleccionar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 30% 5% 30% 5% 30%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Consultanp__seleccionar__item {
+  width: 100%;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.Consultanp__seleccionar__item:hover {
+  background-color: rgba(0, 0, 0, 0.57);
+  text-decoration: none;
+}
+
+.Consultanp__seleccionar__img__2 {
+  width: 70%;
+}
+
+.Consultanp__seleccionar__img__1 {
+  width: 50%;
+}
+
+.Consultanp__seleccionar__img__3 {
+  width: 50%;
+}

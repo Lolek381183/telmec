@@ -6,7 +6,7 @@ class RegisterForm extends React.Component {
   state = {
     counter: 0,
     Paciente_encontrado: "",
-    backend: "https://backend.telemec.health",
+    backend: "http://localhost:3001",
     form: {
       Primer_nombre: "",
       Segundo_nombre: "",
