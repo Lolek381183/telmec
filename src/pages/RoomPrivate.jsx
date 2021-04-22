@@ -19,7 +19,7 @@ class RoomPrivate extends React.Component {
       localMediaAvailable: true,
       hasJoinedRoom: false,
       activeRoom: null,
-      backend: "http://localhost:3001",
+      backend: "https://backend.telemec.health",
     };
     this.fersd = React.createRef();
     this.joinRoom = this.joinRoom.bind(this);

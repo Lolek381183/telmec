@@ -6,7 +6,7 @@ class ConsultaForm extends React.Component {
   state = {
     counter: 0,
     Paciente_encontrado: "",
-    backend: "http://localhost:3001",
+    backend: "https://backend.telemec.health",
     form: {
       Primer_nombre: "",
       Segundo_nombre: "",
