@@ -72,11 +72,9 @@ class RegisterForm extends React.Component {
         document.getElementById("Demo_1").style.display = "block";
         document.getElementById("Demo_2").style.display = "none";
         document.getElementById("Clinical").style.display = "none";
-        document.getElementById("dot1").style.backgroundColor = "white";
-        document.getElementById("dot2").style.backgroundColor =
-          "rgba(255, 255, 255, 0.2)";
-        document.getElementById("dot3").style.backgroundColor =
-          "rgba(255, 255, 255, 0.2)";
+        document.getElementById("dot1").style.backgroundColor = "gray";
+        document.getElementById("dot2").style.backgroundColor = "white";
+        document.getElementById("dot3").style.backgroundColor = "white";
 
         this.setState({
           counter: 0,
@@ -86,11 +84,9 @@ class RegisterForm extends React.Component {
         document.getElementById("Demo_1").style.display = "none";
         document.getElementById("Demo_2").style.display = "block";
         document.getElementById("Clinical").style.display = "none";
-        document.getElementById("dot1").style.backgroundColor =
-          "rgba(255, 255, 255, 0.2)";
-        document.getElementById("dot2").style.backgroundColor = "white";
-        document.getElementById("dot3").style.backgroundColor =
-          "rgba(255, 255, 255, 0.2)";
+        document.getElementById("dot1").style.backgroundColor = "white";
+        document.getElementById("dot2").style.backgroundColor = "gray";
+        document.getElementById("dot3").style.backgroundColor = "white";
 
         this.setState({
           counter: 1,
@@ -100,11 +96,9 @@ class RegisterForm extends React.Component {
         document.getElementById("Demo_1").style.display = "none";
         document.getElementById("Demo_2").style.display = "none";
         document.getElementById("Clinical").style.display = "block";
-        document.getElementById("dot1").style.backgroundColor =
-          "rgba(255, 255, 255, 0.2)";
-        document.getElementById("dot2").style.backgroundColor =
-          "rgba(255, 255, 255, 0.2)";
-        document.getElementById("dot3").style.backgroundColor = "white";
+        document.getElementById("dot1").style.backgroundColor = "white";
+        document.getElementById("dot2").style.backgroundColor = "white";
+        document.getElementById("dot3").style.backgroundColor = "gray";
 
         this.setState({
           counter: 2,
@@ -361,6 +355,7 @@ class RegisterForm extends React.Component {
                     <label htmlFor="">Tipo de identificación</label>
                     <br />
                     <select
+                      className="form-control"
                       name="Tipo_identificacion"
                       onChange={(value) => {
                         this.handleChange(value);
@@ -397,6 +392,7 @@ class RegisterForm extends React.Component {
                     <label htmlFor="">Estado Paciente</label>
                     <br />
                     <select
+                      className="form-control"
                       name="Estado_paciente"
                       onChange={(value) => {
                         this.handleChange(value);
@@ -414,6 +410,7 @@ class RegisterForm extends React.Component {
                     <label htmlFor="">Pais de origen</label>
                     <br />
                     <select
+                      className="form-control"
                       name="Pais_origen"
                       onChange={(value) => {
                         this.handleChange(value);
@@ -432,6 +429,7 @@ class RegisterForm extends React.Component {
                     <label htmlFor="">Estado Civil</label>
                     <br />
                     <select
+                      className="form-control"
                       name="Estado_civil"
                       onChange={(value) => {
                         this.handleChange(value);
@@ -449,6 +447,7 @@ class RegisterForm extends React.Component {
                     <label htmlFor="">Sexo</label>
                     <br />
                     <select
+                      className="form-control"
                       name="Sexo"
                       onChange={(value) => {
                         this.handleChange(value);

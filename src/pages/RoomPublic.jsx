@@ -2,7 +2,7 @@ import React from "react";
 import Video from "twilio-video";
 import "./styles/Room.css";
 import Axios from "axios";
-import Bottombar from "../components/Bottombar.jsx";
+
 import Logo from "../images/MEC.png";
 
 class RoomPrivate extends React.Component {
@@ -268,7 +268,6 @@ class RoomPrivate extends React.Component {
             </div>
           </div>
         </div>
-        <Bottombar></Bottombar>
       </React.Fragment>
     );
   }

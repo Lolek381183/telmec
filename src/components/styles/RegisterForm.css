@@ -12,19 +12,20 @@
   grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
-  background-color: rgb(0, 0, 0, 0.3);
+  box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+  background-color: rgba(214, 214, 214, 0.85);
 }
 
 .registerform__inner {
   margin: 0 auto;
-  color: white;
+  color: rgb(56, 56, 56);
   width: 80%;
 }
 
 .Text__container__title {
   font-weight: 900;
   font-size: 20px;
-  color: white;
+  color: rgb(106, 106, 106);
   padding-bottom: 10px;
   padding-top: 20px;
 }
@@ -61,14 +62,14 @@ select {
   margin-left: 10px;
   width: 20px;
   height: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
 .arrow {
   margin-left: 10px;
   font-size: 40px;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgb(255, 255, 255);
 }
 
 .dot:hover {
@@ -95,13 +96,15 @@ select {
   text-align: center;
   font-size: 15px;
   padding-top: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+  background-color: rgba(192, 25, 41, 0.624);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .Button__Crear:hover {
-  background-color: rgba(255, 255, 255, 0.453);
+  background-color: rgba(192, 25, 41, 0.864);
 }
 
 .Button__arriba {
@@ -116,11 +119,12 @@ select {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
-  background-color: rgb(0, 0, 0, 0.3);
+  box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+  background-color: rgba(214, 214, 214, 0.85);
 }
 
 .Registerform__borrar__actualizar__inner {
   margin: 0 auto;
-  color: white;
+  color: rgb(106, 106, 106);
   width: 80%;
 }

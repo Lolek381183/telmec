@@ -1,35 +1,101 @@
 .Bottombar__outer {
-  background-color: rgba(0, 0, 0, 0.3);
-  height: 150px;
+  position: relative;
+  height: 320px;
   width: 100%;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+  background-color: rgb(255, 255, 255);
 }
 
 .Bottombar__inner {
-  padding-top: 10px;
-  width: 60%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  height: 200px;
+  top: 40%;
+  left: 100%;
+  transform: translate(-110%, -50%);
+  color: black;
   display: grid;
-  margin: 0 auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  color: white;
+  grid-template-columns: 130px 270px;
 }
 
-.Partner__img__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Bottombar__contacto__text {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+  border-left: solid rgb(131, 131, 131);
+}
+.Bottombar__contacto__item {
+  padding-top: 10px;
+  display: grid;
+  font-size: 13px;
+  grid-template-columns: 15% 82%;
+  border-bottom: dotted rgb(131, 131, 131);
+  padding-bottom: 10px;
+}
+
+.Bottombar__img {
+  padding-top: 30px;
+  width: 100%;
+  position: relative;
+  padding-right: 20px;
 }
 
 .Partner__img {
-  height: 80px;
+  width: 100%;
+}
+
+.Bottombar__contacto__item__img {
+  padding-top: 10px;
+  width: 100%;
+}
+.Bottombar__contacto__item__text {
+  padding-left: 10px;
+}
+
+.Bottombar__contacto__item__img__1 {
+  width: 100%;
+}
+.Bottombar__contacto__item__text__1 {
+  padding-left: 10px;
+  padding-top: 5.5px;
+}
+
+.Bottombar__contacto__item__img__2 {
+  width: 100%;
+}
+.Bottombar__contacto__item__text__2 {
+  padding-left: 10px;
+  padding-top: 5.5px;
 }
 
 .Copy__text__outter {
+  position: relative;
+  top: 92%;
+  width: 100%;
   padding-top: 20px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  border-top: solid rgb(131, 131, 131);
+  text-align: center;
+  transform: translate(-0%, -100%);
+  color: rgb(0, 0, 0);
 }
-.Copy__text__inner {
-  color: white;
-  margin: 0 auto;
+
+.Bottombar__especialidades {
+  width: 100%;
+  position: relative;
+  font-weight: bold;
+}
+.Bottombar__especialidades__inner {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.Especialidad__img {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
 }

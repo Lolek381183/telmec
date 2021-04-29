@@ -2,8 +2,6 @@ import React from "react";
 import RegisterFrom from "../components/RegisterForm.jsx";
 import "./styles/Newuser.css";
 import Axios from "axios";
-import Bottombar from "../components/Bottombar";
-import Navbar from "../components/Navbar";
 
 class Paciente extends React.Component {
   constructor(props) {
@@ -27,7 +25,6 @@ class Paciente extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar></Navbar>
         <div className="New__user">
           <div className="New__user__inner">
             <div>
@@ -35,7 +32,6 @@ class Paciente extends React.Component {
             </div>
           </div>
         </div>
-        <Bottombar></Bottombar>
       </React.Fragment>
     );
   }

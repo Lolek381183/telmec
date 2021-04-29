@@ -2,8 +2,6 @@ import React from "react";
 import Video from "twilio-video";
 import "./styles/Room.css";
 import Axios from "axios";
-import Navbar from "../components/Navbar.jsx";
-import Bottombar from "../components/Bottombar.jsx";
 
 import ConsultaForm from "../components/ConsultaFrom.jsx";
 
@@ -211,7 +209,6 @@ class RoomPrivate extends React.Component {
 
     return (
       <React.Fragment>
-        <Navbar></Navbar>
         <div>
           <div className="Big__container">
             <div className="flex-container">
@@ -243,7 +240,6 @@ class RoomPrivate extends React.Component {
             </div>
           </div>
         </div>
-        <Bottombar></Bottombar>
       </React.Fragment>
     );
   }

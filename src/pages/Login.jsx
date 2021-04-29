@@ -1,9 +1,7 @@
 import React from "react";
 import "./styles/Login.css";
-import Logo from "../images/MEC.png";
+import Logo from "../images/logogris.png";
 import Axios from "axios";
-import Bottombar from "../components/Bottombar";
-import Navbar from "../components/Navbar";
 
 class Login extends React.Component {
   constructor(props) {
@@ -22,11 +20,7 @@ class Login extends React.Component {
       },
       backend: "https://backend.telemec.health",
     };
-  }
 
-  componentDidMount() {
-    document.getElementById("singup").style.display = "none";
-    document.getElementById("login").style.display = "block";
     Axios.get(this.state.backend + "/profile", {
       withCredentials: true,
     }).then((response) => {
@@ -45,6 +39,11 @@ class Login extends React.Component {
         });
       }
     });
+  }
+
+  componentDidMount() {
+    document.getElementById("singup").style.display = "none";
+    document.getElementById("login").style.display = "block";
   }
 
   handleLogin = (e) => {
@@ -112,7 +111,6 @@ class Login extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar></Navbar>
         <div className="Login__container__outter">
           <div className="Login__container__inner">
             <div className="Login__container">
@@ -216,7 +214,6 @@ class Login extends React.Component {
             </div>
           </div>
         </div>
-        <Bottombar></Bottombar>
       </React.Fragment>
     );
   }

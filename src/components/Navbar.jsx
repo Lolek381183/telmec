@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/Navbar.css";
 import Logo from "../images/Logo.png";
-import User_incon from "../images/User_icon.png";
+import Arrow from "../images/arrow.png";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,8 @@ class Navbar extends React.Component {
     this.state = {
       login: true,
       nombre: "",
+      Entrance_menu: true,
+      Entrance_link: "Portal TeleHealth mec",
       backend: "https://backend.telemec.health",
     };
   }
@@ -28,60 +30,146 @@ class Navbar extends React.Component {
       }
     });
   }
+
+  showEntranceMenu = (e) => {
+    if (this.state.Entrance_menu) {
+      document.getElementById(
+        "Login__container__service__select__desplegable"
+      ).style.display = "block";
+      this.setState({
+        Entrance_menu: false,
+      });
+    } else {
+      document.getElementById(
+        "Login__container__service__select__desplegable"
+      ).style.display = "none";
+      this.setState({
+        Entrance_menu: true,
+      });
+    }
+  };
+
+  entranceSelect = (e) => {
+    document.getElementById(
+      "Login__container__service__select__desplegable"
+    ).style.display = "none";
+    this.setState({
+      Entrance_link: e,
+      Entrance_menu: true,
+    });
+  };
   render() {
     return (
       <div className="Menubar__outer">
         <div className="MenuBar__inner">
-          <Link
-            to="/"
-            className="Logo__container text-reset text-decoration-none"
-          >
-            <div className="Logo__image__container">
-              <img className="Logo__image" src={Logo} alt="Logo" />
-            </div>
-            <div className="Logo__Title">
-              <span>TeleHealth</span>
-            </div>
-          </Link>
-          <div className="Pages__container">
-            {this.state.login ? (
-              ""
-            ) : (
-              <Link
-                to="/pacientes"
-                className="MenuButton__text text-reset text-decoration-none"
-              >
-                <div className="illness__container">
-                  <span className="MenuButton__text">Pacientes</span>
+          <div className="MenuBar__logo__title">
+            <Link
+              to="/"
+              className="Logo__container text-reset text-decoration-none"
+            >
+              <div className="Logo__image__container">
+                <img className="Logo__image" src={Logo} alt="Logo" />
+              </div>
+              &nbsp;
+              <div className="Logo__Title">
+                <span>TeleHealth</span>
+              </div>
+            </Link>
+          </div>
+
+          {this.state.login ? (
+            <div className="Pages__container">
+              <Link to="/" className=" text-reset text-decoration-none">
+                <div className="Link__container">
+                  <span>Inicio</span>
                 </div>
               </Link>
-            )}
-
-            {this.state.login ? (
-              ""
-            ) : (
               <Link
                 to="/consultaNP"
-                className="MenuButton__text text-reset text-decoration-none"
+                className=" text-reset text-decoration-none"
               >
-                <div className="Data__container">
-                  <span className="MenuButton__text">Consulta NP</span>
+                <div className="Link__container">
+                  <span>Necesidades</span>
                 </div>
               </Link>
-            )}
-          </div>
-          <div className="Login__container__1">
-            <div className="Login__text__container">
+              <Link
+                to="/consultaNP"
+                className=" text-reset text-decoration-none"
+              >
+                <div className="Link__container">
+                  <span>Productos y Servicios</span>
+                </div>
+              </Link>
+            </div>
+          ) : (
+            <div className="Pages__container">
+              <Link
+                to="/pacientes"
+                className=" text-reset text-decoration-none"
+              >
+                <div className="Link__container">
+                  <span>Pacientes</span>
+                </div>
+              </Link>
+              <Link
+                to="/consultaNP"
+                className=" text-reset text-decoration-none"
+              >
+                <div className="Link__container">
+                  <span>Consulta NP</span>
+                </div>
+              </Link>
+            </div>
+          )}
+
+          <div className="Login__container">
+            <div className="Login__container__service__select">
+              <div
+                className="Login__container__service__selected"
+                onClick={this.showEntranceMenu}
+              >
+                {this.state.Entrance_link}
+              </div>
+              <div className="Login__container__service__selector">
+                <img
+                  src={Arrow}
+                  alt="arrow"
+                  className="Login__container__service__selector__arrow"
+                />
+              </div>
               <Link
                 to="/login"
                 className="MenuButton__text text-reset text-decoration-none"
               >
-                {" "}
-                <img className="User_icon" src={User_incon} alt="" />
-                &nbsp;
-                {this.state.login ? "Log in" : "Log out"}
-                &nbsp;
+                <div className="Login__container__service__selected__button">
+                  {this.state.login ? "Entrar" : "Salir"}
+                </div>
               </Link>
+              <div
+                className="Login__container__service__select__desplegable"
+                id="Login__container__service__select__desplegable"
+              >
+                <div
+                  className="Login__container__service__select__desplegable__item"
+                  onClick={() => this.entranceSelect("Portal TeleHealth mec")}
+                >
+                  Portal TeleHealth mec
+                </div>
+                <div
+                  className="Login__container__service__select__desplegable__item"
+                  onClick={() => this.entranceSelect("Portal Manilla mec")}
+                >
+                  Portal Manilla mec
+                </div>
+                <div
+                  className="Login__container__service__select__desplegable__item"
+                  onClick={() =>
+                    this.entranceSelect("Portal EH TeleHealth mec")
+                  }
+                >
+                  Portal EH TeleHealth mec
+                </div>
+              </div>
             </div>
           </div>
         </div>

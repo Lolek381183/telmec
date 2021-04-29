@@ -3,8 +3,6 @@ import React from "react";
 import ConsultaForm from "../components/ConsultaFrom.jsx";
 import "./styles/Newregister.css";
 import Axios from "axios";
-import Bottombar from "../components/Bottombar";
-import Navbar from "../components/Navbar";
 
 class Presencial extends React.Component {
   constructor(props) {
@@ -30,7 +28,6 @@ class Presencial extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar></Navbar>
         <div className="New__register">
           <div className="New__register__inner">
             <div>
@@ -38,7 +35,6 @@ class Presencial extends React.Component {
             </div>
           </div>
         </div>
-        <Bottombar></Bottombar>
       </React.Fragment>
     );
   }
