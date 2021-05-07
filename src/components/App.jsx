@@ -4,6 +4,8 @@ import Login from "../pages/Login.jsx";
 import Home from "../pages/Home.jsx";
 import RoomPrivate from "../pages/RoomPrivate.jsx";
 import RoomPublic from "../pages/RoomPublic.jsx";
+import RoomPrivateSensor from "../pages/RoomPrivateSensor.jsx";
+import RoomPublicSensor from "../pages/RoomPublicSensor.jsx";
 import Paciente from "../pages/Pacientes.jsx";
 import ConsultaNP from "../pages/ConsultaNP.jsx";
 import Presencial from "../pages/Presencial.jsx";
@@ -24,6 +26,14 @@ class App extends React.Component {
             <Route
               path="/roompub/:parameter1"
               render={(props) => <RoomPublic {...props} />}
+            />
+            <Route
+              path="/roomprisen/:parameter1/:parameter2"
+              render={(props) => <RoomPrivateSensor {...props} />}
+            />
+            <Route
+              path="/roompubsen/:parameter1"
+              render={(props) => <RoomPublicSensor {...props} />}
             />
             <Route exact path="/pacientes" component={Paciente} />
             <Route exact path="/consultaNP" component={ConsultaNP} />

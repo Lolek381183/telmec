@@ -38,8 +38,9 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin-top: 2px;
   cursor: pointer;
+  width: 100%;
 }
 .button34:hover {
   border: none;
@@ -49,15 +50,14 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin-top: 2px;
   cursor: pointer;
 }
 
-.button1 {
-  background-color: #4caf50;
-}
-
 .button2 {
+  background-color: #008cba;
+}
+.button2:hover {
   background-color: #008cba;
 }
 
@@ -125,4 +125,10 @@ video {
   padding-top: 10px;
   color: white;
   text-align: center;
+}
+
+.Buttons__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 47.5% 5% 47.5%;
 }

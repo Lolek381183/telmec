@@ -2,7 +2,8 @@ import React from "react";
 import Video from "twilio-video";
 import "./styles/Room.css";
 import Axios from "axios";
-import ConsultaForm from "../components/ConsultaFrom.jsx";
+import io from "socket.io-client";
+let socket;
 
 class RoomPrivate extends React.Component {
   constructor(props) {
@@ -32,21 +33,18 @@ class RoomPrivate extends React.Component {
     );
   }
   componentDidMount() {
-    Axios.get(this.state.backend + "/profile", {
-      withCredentials: true,
-    })
-      .then((response) => {
-        if (response) {
-        }
-      })
-      .catch((error) => {
-        this.props.history.push("/login");
-      });
-
     Axios.get(this.state.backend + "/token").then((results) => {
       const { identity, token } = results.data;
       console.log(results.data);
       this.setState({ identity, token });
+    });
+    socket = io(this.state.backend);
+    socket.emit("join_room", this.state.roomName);
+    socket.on("receive_message", (data) => {
+      console.log(data);
+      if (data.message === "Iniciar_Temperatura") {
+        alert("Porfavor tome el termometro y presione el boton");
+      }
     });
   }
 
@@ -209,33 +207,32 @@ class RoomPrivate extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <div className="Big__container">
+          <div className="Big__container__public">
             <div className="flex-container">
-              {showLocalTrack}
+              <div
+                className="flex-item Remote__media__public"
+                ref="remoteMedia"
+                id="remote-media"
+              ></div>
 
-              <div className="flex-item" ref="remoteMedia" id="remote-media" />
-
-              <div className="flex-item">
+              <div className="flex-item Buttons__container">
                 <button
                   className="button34 button2"
                   label="Leave Room"
                   onClick={this.joinRoom}
                 >
-                  <span>Entrar</span>
+                  <span>Comenzar Videollamada</span>
                 </button>
+                <div></div>
                 <button
                   className="button34 button2"
                   label="Leave Room"
                   onClick={this.leaveRoom}
                 >
-                  <span>Salir</span>
+                  <span>Finalizar Videollamada</span>
                 </button>
               </div>
-              <div className="flex-item" ref="remoteMedia" id="remote-media" />
-            </div>
-            <div></div>
-            <div>
-              <ConsultaForm Numero_identificacion={this.state.roomName} />
+              <div className="Local__media__public">{showLocalTrack}</div>
             </div>
           </div>
         </div>

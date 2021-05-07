@@ -2,21 +2,23 @@ import React from "react";
 import Video from "twilio-video";
 import "./styles/Room.css";
 import Axios from "axios";
-import ConsultaForm from "../components/ConsultaFrom.jsx";
+import ConsultaForm from "../components/ConsultaFormSensor.jsx";
 
 class RoomPrivate extends React.Component {
   constructor(props) {
     super(props);
-    const { parameter1 } = this.props.match.params;
+    const { parameter1, parameter2 } = this.props.match.params;
     this.state = {
       identity: null,
-      roomName: parameter1,
+      identificacion: parameter1,
+      roomName: parameter2,
       roomNameErr: false,
       previewTracks: null,
       localMediaAvailable: true,
       hasJoinedRoom: false,
       activeRoom: null,
       backend: "https://backend.telemec.health",
+      messageList: [],
     };
     this.fersd = React.createRef();
     this.joinRoom = this.joinRoom.bind(this);
@@ -235,7 +237,10 @@ class RoomPrivate extends React.Component {
             </div>
             <div></div>
             <div>
-              <ConsultaForm Numero_identificacion={this.state.roomName} />
+              <ConsultaForm
+                Numero_identificacion={this.state.identificacion}
+                roomName={this.state.roomName}
+              />
             </div>
           </div>
         </div>

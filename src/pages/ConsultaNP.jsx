@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./styles/ConsultaNp.css";
 import Presencial from "../images/Presencial.png";
 import Virtual from "../images/Virtual.png";
+import Maleta from "../images/Maleta.png";
 
 class newRegister extends React.Component {
   constructor(props) {
@@ -13,12 +14,14 @@ class newRegister extends React.Component {
       backend: "https://backend.telemec.health",
       form: {
         Numero_identificacion_buscar: "",
+        Maleta: "",
       },
     };
   }
   componentDidMount() {
     document.getElementById("Buscar").style.display = "block";
     document.getElementById("Seleccionar").style.display = "none";
+    document.getElementById("Seleccionar_Maleta").style.display = "none";
     Axios.get(this.state.backend + "/profile", {
       withCredentials: true,
     })
@@ -37,11 +40,11 @@ class newRegister extends React.Component {
         Numero_identificacion: this.state.form.Numero_identificacion_buscar,
       },
     }).then((response) => {
+      console.log(response);
       if (response.data[0] !== undefined) {
         alert("Paciente encontrado");
         document.getElementById("Buscar").style.display = "none";
         document.getElementById("Seleccionar").style.display = "Block";
-        document.getElementById("Todo").style.backgroundColor = "transparent";
       } else {
         alert("Paciente no encontrado");
         document.getElementById("Buscar").style.display = "block";
@@ -54,6 +57,12 @@ class newRegister extends React.Component {
     this.setState({
       form: { ...this.state.form, [e.target.name]: e.target.value },
     });
+  };
+
+  seleccionarMaleta = () => {
+    document.getElementById("Buscar").style.display = "none";
+    document.getElementById("Seleccionar").style.display = "none";
+    document.getElementById("Seleccionar_Maleta").style.display = "block";
   };
 
   render() {
@@ -91,6 +100,7 @@ class newRegister extends React.Component {
                     "/presencial/" +
                     this.state.form.Numero_identificacion_buscar
                   }
+                  className="text-reset text-decoration-none"
                 >
                   <div className="Consultanp__seleccionar__item">
                     CONSULTA PRESENCIAL <br />
@@ -106,10 +116,13 @@ class newRegister extends React.Component {
                   to={
                     "/roompri/" + this.state.form.Numero_identificacion_buscar
                   }
+                  className=" text-reset text-decoration-none"
                 >
                   <div className="Consultanp__seleccionar__item">
                     {" "}
-                    CONSULTA <br /> VIRTUAL <br />
+                    <span>
+                      CONSULTA <br /> VIRTUAL <br />
+                    </span>
                     <img
                       src={Virtual}
                       alt=""
@@ -117,16 +130,59 @@ class newRegister extends React.Component {
                     />
                   </div>
                 </Link>
+
                 <div></div>
-                <div className="Consultanp__seleccionar__item">
-                  {" "}
-                  CONSULTA MECMALETA <br />
-                  <img
-                    src={Virtual}
-                    alt=""
-                    className="Consultanp__seleccionar__img__2"
-                  />
+                <div onClick={this.seleccionarMaleta}>
+                  <div className="Consultanp__seleccionar__item">
+                    {" "}
+                    CONSULTA TELESENSORICA <br />
+                    <img
+                      src={Maleta}
+                      alt=""
+                      className="Consultanp__seleccionar__img__2"
+                    />
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div
+              className="Registerform__borrar__actualizar__inner Consultanp__pad"
+              id="Seleccionar_Maleta"
+            >
+              <div className="Text__container__title">
+                <span>Maleta Telesensorica</span>
+              </div>
+              <div className="form-group">
+                <label htmlFor="">
+                  Seleccione la maleta que tiene su paciente
+                </label>
+                <select
+                  className="form-control"
+                  name="Maleta"
+                  onChange={(value) => {
+                    this.handleChange(value);
+                  }}
+                  id="5"
+                >
+                  <option value="Seleccionar">Seleccionar</option>
+                  <option value="maleta_1">Maleta 1</option>
+                  <option value="maleta_2">Maleta 2</option>
+                  <option value="maleta_3">Maleta 3</option>
+                  <option value="maleta_4">Maleta 4</option>
+                </select>
+                <Link
+                  to={
+                    "/roomprisen/" +
+                    this.state.form.Numero_identificacion_buscar +
+                    "/" +
+                    this.state.form.Maleta
+                  }
+                  className=" text-reset text-decoration-none"
+                >
+                  <div className="Button__arriba">
+                    <div className="Button__Crear">ENTRAR</div>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -7,7 +7,8 @@
   width: 40%;
   margin: 0 auto;
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+  background-color: rgba(214, 214, 214, 0.85);
 }
 
 .Blank__Space {
@@ -32,17 +33,18 @@
 .Consultanp__seleccionar__item {
   width: 100%;
   height: 150px;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+  background-color: rgba(192, 25, 41, 0.624);
+  color: rgb(255, 255, 255);
   text-align: center;
   border-radius: 20px;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .Consultanp__seleccionar__item:hover {
-  background-color: rgba(0, 0, 0, 0.57);
-  text-decoration: none;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
+  background-color: rgba(192, 25, 41, 0.864);
+  text-decoration: underline transparent;
 }
 
 .Consultanp__seleccionar__img__2 {
