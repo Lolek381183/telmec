@@ -48,7 +48,7 @@ class RoomPrivate extends React.Component {
       if (data.message === "Sensor_Conectado") {
         alert("Ahora Pongalo en su frente y vuelvalo a presionar");
       }
-      if (str(data.message).substring(0, 18) === "Temperatura_Tomada") {
+      if (String(data.message).substring(0, 18) === "Temperatura_Tomada") {
         alert(data.message);
       }
     });
