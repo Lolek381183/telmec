@@ -77,7 +77,9 @@ class ConsultaForm extends React.Component {
     socket = io(this.state.backend);
     socket.emit("join_room", this.state.roomName);
     socket.on("receive_message", (data) => {
-      console.log(data);
+      if (str(data.message).substring(0, 18) === "Temperatura_Tomada") {
+        alert(data.message);
+      }
     });
   }
 

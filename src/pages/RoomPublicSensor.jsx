@@ -45,6 +45,12 @@ class RoomPrivate extends React.Component {
       if (data.message === "Iniciar_Temperatura") {
         alert("Porfavor tome el termometro y presione el boton");
       }
+      if (data.message === "Sensor_Conectado") {
+        alert("Ahora Pongalo en su frente y vuelvalo a presionar");
+      }
+      if (str(data.message).substring(0, 18) === "Temperatura_Tomada") {
+        alert(data.message);
+      }
     });
   }
 
