@@ -84,20 +84,15 @@ class Navbar extends React.Component {
                   <span>Inicio</span>
                 </div>
               </Link>
-              <Link
-                to="/consultaNP"
-                className=" text-reset text-decoration-none"
-              >
-                <div className="Link__container">
-                  <span>Necesidades</span>
-                </div>
-              </Link>
-              <Link
-                to="/consultaNP"
-                className=" text-reset text-decoration-none"
-              >
+
+              <Link to="/PyS" className=" text-reset text-decoration-none">
                 <div className="Link__container">
                   <span>Productos y Servicios</span>
+                </div>
+              </Link>
+              <Link to="/PyS" className=" text-reset text-decoration-none">
+                <div className="Link__container">
+                  <span>Contacto</span>
                 </div>
               </Link>
             </div>

@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Login from "../pages/Login.jsx";
+
 import Home from "../pages/Home.jsx";
+import PyS from "../pages/PyS.jsx";
+import Login from "../pages/Login.jsx";
 import RoomPrivate from "../pages/RoomPrivate.jsx";
 import RoomPublic from "../pages/RoomPublic.jsx";
 import RoomPrivateSensor from "../pages/RoomPrivateSensor.jsx";
@@ -17,8 +19,9 @@ class App extends React.Component {
       <BrowserRouter>
         <Layout>
           <Switch>
-            <Route exact path="/login" component={Login} />
             <Route exact path="/" component={Home} />
+            <Route exact path="/PyS" component={PyS} />
+            <Route exact path="/login" component={Login} />
             <Route
               path="/roompri/:parameter1"
               render={(props) => <RoomPrivate {...props} />}

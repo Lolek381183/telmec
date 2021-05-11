@@ -1,4 +1,5 @@
 import React from "react";
+
 import home from "../images/EIATmedicalhub.jpg";
 import Arrow from "../images/Arrow1.png";
 import Esteto from "../images/Esteto.png";
@@ -12,6 +13,7 @@ import Diagnostico from "../images/Diagnostico.png";
 import Telemedicina_info from "../images/—Pngtree—computer mac_4971106.png";
 
 import "./styles/Home.css";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -34,6 +36,7 @@ class Home extends React.Component {
       "Home__especialidades__info__text__Diagnostico"
     ).style.opacity = "0%";
   }
+
   handleEspecialidades = (e) => {
     switch (e) {
       case "Telemedicina":
@@ -345,8 +348,8 @@ class Home extends React.Component {
                   <div className="Home__especialidades__info__text__2">
                     Por medio de conexiones a larga distancia podemos suplir
                     necesidades en salud en los lugares mas alejados de nuestro
-                    país. El intenernet y su interconectividad ha abierto un
-                    nuevo plano de reunion en el cual especialistas a miles de
+                    país. El internet y su interconectividad ha abierto un nuevo
+                    plano de reunión en el cual especialistas a miles de
                     kilometros de distacia pueden examinar y dictaminar un
                     paciente que necesita de su ayuda.
                   </div>
@@ -377,13 +380,12 @@ class Home extends React.Component {
                     ten acceso a ellos en cualquier lugar
                   </div>
                   <div className="Home__especialidades__info__text__2">
-                    EL almacenamiento de datos en la nube es una herramienta que
-                    debe de implementarse en la medicina por muchas razones, la
-                    primera de ellas es por el hecho de que permite que
-                    diferentes entes en salud puedan ver y leer esta
-                    información. Además hace que los registros sean almacenados
-                    en linea y llevar informacion medica contigo es una cosa del
-                    pasado.
+                    El almaceniamiento de datos en la nube permite que la
+                    información deje de estar concentrada en un solo lugar, y
+                    pueda ser analizada solo por una persona, al subir los datos
+                    a la nube proporcionamios interconectividad, y hacemos que
+                    varios centros y profesionales de salud puedan acceder a
+                    ellos, analizarlos y llegar a conclusiones.
                   </div>
                 </div>
                 <div
@@ -391,16 +393,16 @@ class Home extends React.Component {
                   id="Home__especialidades__info__text__Red"
                 >
                   <div className="Home__especialidades__info__text__1">
-                    Una red de sensores que permita el seguimiento de tu salud,
-                    hace que todos estemos más seguros
+                    Una red de sensores que permita el seguimiento de tus signos
+                    vitales y tus indicadores de salud
                   </div>
                   <div className="Home__especialidades__info__text__2">
-                    Por medio de conexiones a larga distancia podemos suplir
-                    necesidades en salud en los lugares mas alejados de nuestro
-                    país. El intenernet y su interconectividad ha abierto un
-                    nuevo plano de reunion en el cual especialistas a miles de
-                    kilometros de distacia pueden examinar y dictaminar un
-                    paciente que necesita de su ayuda.
+                    Nos encargamos de desplegar sensores médicos a nivel
+                    nacional para que tu y los tuyos puedan seguir de cerca el
+                    desarrollo de su salud, estos datos una vez tomados son
+                    guardados y estan a tu disposición y la de tus profesionales
+                    de la salud en todo momento, para así poder llegar a
+                    conclusiones y actuar rápidamente en caso de ser necesario.
                   </div>
                 </div>
                 <div
@@ -408,16 +410,17 @@ class Home extends React.Component {
                   id="Home__especialidades__info__text__Analisis"
                 >
                   <div className="Home__especialidades__info__text__1">
-                    Cuando almacenamos datos sin hacer ningún tipo de análisis,
-                    se pierde valiosa información
+                    Los datos almacenados sin ningún tipo de análisis son datos
+                    perdidos
                   </div>
                   <div className="Home__especialidades__info__text__2">
-                    Por medio de conexiones a larga distancia podemos suplir
-                    necesidades en salud en los lugares mas alejados de nuestro
-                    país. El intenernet y su interconectividad ha abierto un
-                    nuevo plano de reunion en el cual especialistas a miles de
-                    kilometros de distacia pueden examinar y dictaminar un
-                    paciente que necesita de su ayuda.
+                    A veces, un simple análisis estadistico puede hacer que
+                    patrones no tan notorios sean descubiertos en algunas series
+                    de tiempo. Esto permite tener diagnosticos más acertados y
+                    rápidos tal y como se necesita dentro de algunas ramas de la
+                    medicina, sin embargo estas herrramientas estadisticas son
+                    poco utilizadas debido a que los datos se guardan en medios
+                    físicos.
                   </div>
                 </div>
                 <div
@@ -425,21 +428,24 @@ class Home extends React.Component {
                   id="Home__especialidades__info__text__Diagnostico"
                 >
                   <div className="Home__especialidades__info__text__1">
-                    La telemedicina acortando distancias en un mundo
-                    interconectado
+                    Muchas veces las consultas virtuales son poco llamativas por
+                    que no son definitivas
                   </div>
                   <div className="Home__especialidades__info__text__2">
-                    Por medio de conexiones a larga distancia podemos suplir
-                    necesidades en salud en los lugares mas alejados de nuestro
-                    país. El intenernet y su interconectividad ha abierto un
-                    nuevo plano de reunion en el cual especialistas a miles de
-                    kilometros de distacia pueden examinar y dictaminar un
-                    paciente que necesita de su ayuda.
+                    Cada vez son más los especialistas y personas que deciden
+                    tener citas o reuniones virtuales uno de los mayores
+                    inconvenientes de esta modalidad es la incapacidad de
+                    examinar al paciente, así que desarrollamos un sistema
+                    telesensorico que le permite al médico tener medidas en
+                    tiempo real del paciente que esta tratando, esto mejora
+                    mucho la atención vitual.
                   </div>
                 </div>
-                <div className="Home__especialidades__info__text__button">
-                  CONOCE MÁS DE NUESTROS PRODUCTOS
-                </div>
+                <Link to="/PyS" className="text-reset text-decoration-none">
+                  <div className="Home__especialidades__info__text__button">
+                    CONOCE MÁS DE NUESTROS PRODUCTOS
+                  </div>
+                </Link>
               </div>
             </div>
             <div className="Blank__space"></div>

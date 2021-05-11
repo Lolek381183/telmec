@@ -1,0 +1,156 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.PyS__Telemedicina {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+
+.PyS__Telemedicina__1 {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  background-color: white;
+}
+
+.PyS__Telemedicina__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 1100px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.PyS__Telemedicina__inner__1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 1100px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.PyS__Telemedicina__inner__2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 1100px;
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.PyS__Telemedicina__inner__img {
+  position: relative;
+}
+
+.PyS__Telemedicina__inner__img__inner {
+  width: 100%;
+  display: grid;
+  position: relative;
+  grid-template-columns: 30% 70%;
+}
+
+.PyS__Telemedicina__inner__img__1 {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.PyS__Telemedicina__inner__img__1__logo {
+  position: absolute;
+  top: 33%;
+  left: 48.2%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+
+  animation: blink 4s;
+  animation-iteration-count: infinite;
+}
+
+.PyS__Telemedicina__inner__info {
+  position: relative;
+}
+
+.PyS__Telemedicina__inner__info__1 {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.PyS__Telemedicina__inner__info__text__1 {
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.PyS__Telemedicina__inner__info__text__2 {
+  font-size: 34px;
+  width: 100%;
+  font-weight: bold;
+}
+.PyS__Telemedicina__inner__info__text__3 {
+  padding-top: 20px;
+  text-align: justify;
+  width: 100%;
+}
+
+.PyS__Telemedicina__inner__info__buttons {
+  display: flex;
+  width: 100%;
+}
+.Blank__space__vertical {
+  width: 20px;
+}
+
+.PyS__Telemedicina__inner__img__inner__manilla {
+  height: 600px;
+  position: relative;
+}
+.PyS__Telemedicina__inner__img__inner__iphone {
+  height: 600px;
+  width: 250px;
+  position: relative;
+}
+
+.manilla__img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+}
+.iphone__img {
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 2;
+}
+.video__img {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  padding-left: 4px;
+  height: 475px;
+  z-index: 1;
+}

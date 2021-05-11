@@ -2,6 +2,7 @@ body {
   background-color: #f7f7f7;
   height: 100%;
 }
+
 .Home__outter {
   width: 100%;
 }
@@ -21,7 +22,7 @@ body {
 }
 .Home__welcome__evolucion {
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
 }
 .Home__welcome__text__1 {
@@ -109,6 +110,7 @@ body {
   text-align: center;
   line-height: 50px;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .Home__welcome__button__video:hover {
