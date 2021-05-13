@@ -94,6 +94,10 @@
   .PyS__Telemedicina__inner__img__inner__iphone {
     height: 600px;
   }
+
+  .PyS__Telemedicina__inner__info__text__2 {
+    font-size: 34px;
+  }
 }
 
 @media screen and (max-width: 1120px) and (min-width: 901px) {
@@ -180,6 +184,10 @@
   .PyS__Telemedicina__inner__img__inner__iphone {
     height: 600px;
   }
+
+  .PyS__Telemedicina__inner__info__text__2 {
+    font-size: 34px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -223,12 +231,12 @@
 
   .iphone__img {
     height: 400px;
-    z-index: 1;
+    z-index: 2;
   }
 
   .video__img {
     height: 375px;
-    z-index: 2;
+    z-index: 1;
   }
 
   .PyS__Telemedicina__inner__img__1__logo {
@@ -250,6 +258,13 @@
 
   .PyS__Telemedicina__inner__img__inner__iphone {
     height: 450px;
+  }
+
+  .PyS__Telemedicina__inner__info__text__2 {
+    font-size: 20px;
+  }
+  .PyS__Telemedicina__inner__info__text__1 {
+    padding-bottom: 15px;
   }
 }
 
@@ -323,7 +338,6 @@
 }
 
 .PyS__Telemedicina__inner__info__text__2 {
-  font-size: 34px;
   width: 100%;
   font-weight: bold;
 }

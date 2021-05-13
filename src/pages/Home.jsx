@@ -19,22 +19,22 @@ class Home extends React.Component {
   componentDidMount() {
     document.getElementById(
       "Home__especialidades__info__text__Telemedicina"
-    ).style.opacity = "100%";
+    ).style.display = "initial";
     document.getElementById(
       "Home__especialidades__info__text__Sensores"
-    ).style.opacity = "0%";
+    ).style.display = "none";
     document.getElementById(
       "Home__especialidades__info__text__Nube"
-    ).style.opacity = "0%";
+    ).style.display = "none";
     document.getElementById(
       "Home__especialidades__info__text__Red"
-    ).style.opacity = "0%";
+    ).style.display = "none";
     document.getElementById(
       "Home__especialidades__info__text__Analisis"
-    ).style.opacity = "0%";
+    ).style.display = "none";
     document.getElementById(
       "Home__especialidades__info__text__Diagnostico"
-    ).style.opacity = "0%";
+    ).style.display = "none";
   }
 
   handleEspecialidades = (e) => {
@@ -42,122 +42,122 @@ class Home extends React.Component {
       case "Telemedicina":
         document.getElementById(
           "Home__especialidades__info__text__Telemedicina"
-        ).style.opacity = "100%";
+        ).style.display = "initial";
         document.getElementById(
           "Home__especialidades__info__text__Sensores"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Nube"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Red"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Analisis"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Diagnostico"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         break;
       case "Sensores":
         document.getElementById(
           "Home__especialidades__info__text__Telemedicina"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Sensores"
-        ).style.opacity = "100%";
+        ).style.display = "initial";
         document.getElementById(
           "Home__especialidades__info__text__Nube"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Red"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Analisis"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Diagnostico"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         break;
       case "Nube":
         document.getElementById(
           "Home__especialidades__info__text__Telemedicina"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Sensores"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Nube"
-        ).style.opacity = "100%";
+        ).style.display = "initial";
         document.getElementById(
           "Home__especialidades__info__text__Red"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Analisis"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Diagnostico"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         break;
       case "Red":
         document.getElementById(
           "Home__especialidades__info__text__Telemedicina"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Sensores"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Nube"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Red"
-        ).style.opacity = "100%";
+        ).style.display = "initial";
         document.getElementById(
           "Home__especialidades__info__text__Analisis"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Diagnostico"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         break;
       case "Analisis":
         document.getElementById(
           "Home__especialidades__info__text__Telemedicina"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Sensores"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Nube"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Red"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Analisis"
-        ).style.opacity = "100%";
+        ).style.display = "initial";
         document.getElementById(
           "Home__especialidades__info__text__Diagnostico"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         break;
       case "Diagnostico":
         document.getElementById(
           "Home__especialidades__info__text__Telemedicina"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Sensores"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Nube"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Red"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Analisis"
-        ).style.opacity = "0%";
+        ).style.display = "none";
         document.getElementById(
           "Home__especialidades__info__text__Diagnostico"
-        ).style.opacity = "100%";
+        ).style.display = "initial";
         break;
       default:
         console.log("Upps");
@@ -170,7 +170,7 @@ class Home extends React.Component {
         <div className="Home__outter">
           <div className="Home">
             <div className="Blank__space"></div>
-            <div className="Blank__space"></div>
+            <div className="Blank__space disap"></div>
             <div className="Home__welcome">
               <div>
                 <div className="Home__welcome__evolucion">
@@ -190,46 +190,48 @@ class Home extends React.Component {
               <div>
                 <img src={home} className="Home__welcome__img" alt="" />
               </div>
-              <div className="Home__welcome__button">
-                <div className="Home__welcome__button__item">
-                  <img
-                    src={Esteto}
-                    alt="Arrow"
-                    className="Home__welcome__button__img"
-                  />
-                </div>
-                <div className="Home__welcome__button__item">
-                  <div className="Home__welcome__button__text">
-                    Especialistas listos para ayudarte
+              <div className="Home__welcome__buttons">
+                <div className="Home__welcome__button">
+                  <div className="Home__welcome__button__item">
+                    <img
+                      src={Esteto}
+                      alt="Arrow"
+                      className="Home__welcome__button__img"
+                    />
+                  </div>
+                  <div className="Home__welcome__button__item">
+                    <div className="Home__welcome__button__text">
+                      Especialistas listos para ayudarte
+                    </div>
+                  </div>
+                  <div className="Home__welcome__button__item">
+                    <img
+                      src={Arrow}
+                      alt="Arrow"
+                      className="Home__welcome__button__arrow"
+                    />
                   </div>
                 </div>
-                <div className="Home__welcome__button__item">
-                  <img
-                    src={Arrow}
-                    alt="Arrow"
-                    className="Home__welcome__button__arrow"
-                  />
-                </div>
-              </div>
-              <div className="Home__welcome__button__1">
-                <div className="Home__welcome__button__item">
-                  <img
-                    src={Nube}
-                    alt="Arrow"
-                    className="Home__welcome__button__img"
-                  />
-                </div>
-                <div className="Home__welcome__button__item">
-                  <div className="Home__welcome__button__text">
-                    Maneja tus datos médicos en la nube
+                <div className="Home__welcome__button__1">
+                  <div className="Home__welcome__button__item">
+                    <img
+                      src={Nube}
+                      alt="Arrow"
+                      className="Home__welcome__button__img"
+                    />
                   </div>
-                </div>
-                <div className="Home__welcome__button__item">
-                  <img
-                    src={Arrow}
-                    alt="Arrow"
-                    className="Home__welcome__button__arrow"
-                  />
+                  <div className="Home__welcome__button__item">
+                    <div className="Home__welcome__button__text">
+                      Maneja tus datos médicos en la nube
+                    </div>
+                  </div>
+                  <div className="Home__welcome__button__item">
+                    <img
+                      src={Arrow}
+                      alt="Arrow"
+                      className="Home__welcome__button__arrow"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -237,95 +239,98 @@ class Home extends React.Component {
 
             <div className="Home__especialidades">
               {" "}
-              <div
-                className="Home__especialidades__item"
-                onClick={() => {
-                  this.handleEspecialidades("Telemedicina");
-                }}
-              >
-                <img
-                  src={Telemedicina}
-                  alt="Telemedicina"
-                  className="Home__especialidades__img__1"
-                />{" "}
-                <div className="Home__especialidades__text">Telemedicina</div>
-              </div>
-              <div
-                className="Home__especialidades__item"
-                onClick={() => {
-                  this.handleEspecialidades("Sensores");
-                }}
-              >
-                <img
-                  src={Sensores}
-                  alt="Sensores"
-                  className="Home__especialidades__img__2"
-                />{" "}
-                <div className="Home__especialidades__text">
-                  Sensores médicos
+              <div className="Home__especialidades__inner">
+                <div
+                  className="Home__especialidades__item"
+                  onClick={() => {
+                    this.handleEspecialidades("Telemedicina");
+                  }}
+                >
+                  <img
+                    src={Telemedicina}
+                    alt="Telemedicina"
+                    className="Home__especialidades__img__1"
+                  />{" "}
+                  <div className="Home__especialidades__text">Telemedicina</div>
                 </div>
-              </div>
-              <div
-                className="Home__especialidades__item"
-                onClick={() => {
-                  this.handleEspecialidades("Nube");
-                }}
-              >
-                <img
-                  src={Nube1}
-                  alt="Nube"
-                  className="Home__especialidades__img__1"
-                />{" "}
-                <div className="Home__especialidades__text">
-                  Datos en la nube
+                <div
+                  className="Home__especialidades__item"
+                  onClick={() => {
+                    this.handleEspecialidades("Sensores");
+                  }}
+                >
+                  <img
+                    src={Sensores}
+                    alt="Sensores"
+                    className="Home__especialidades__img__2"
+                  />{" "}
+                  <div className="Home__especialidades__text">
+                    Sensores médicos
+                  </div>
                 </div>
-              </div>
-              <div
-                className="Home__especialidades__item"
-                onClick={() => {
-                  this.handleEspecialidades("Red");
-                }}
-              >
-                <img
-                  src={Red}
-                  alt="Red"
-                  className="Home__especialidades__img"
-                />{" "}
-                <div className="Home__especialidades__text">Red sensorica</div>
-              </div>
-              <div
-                className="Home__especialidades__item"
-                onClick={() => {
-                  this.handleEspecialidades("Analisis");
-                }}
-              >
-                <img
-                  src={Grafico}
-                  alt="Analisis"
-                  className="Home__especialidades__img__1"
-                />{" "}
-                <div className="Home__especialidades__text">
-                  Análisis de datos
+                <div
+                  className="Home__especialidades__item"
+                  onClick={() => {
+                    this.handleEspecialidades("Nube");
+                  }}
+                >
+                  <img
+                    src={Nube1}
+                    alt="Nube"
+                    className="Home__especialidades__img__1"
+                  />{" "}
+                  <div className="Home__especialidades__text">
+                    Datos en la nube
+                  </div>
                 </div>
-              </div>
-              <div
-                className="Home__especialidades__item"
-                onClick={() => {
-                  this.handleEspecialidades("Diagnostico");
-                }}
-              >
-                <img
-                  src={Diagnostico}
-                  alt="Diagnostico"
-                  className="Home__especialidades__img"
-                />{" "}
-                <div className="Home__especialidades__text">
-                  Diagnostico en línea
+                <div
+                  className="Home__especialidades__item"
+                  onClick={() => {
+                    this.handleEspecialidades("Red");
+                  }}
+                >
+                  <img
+                    src={Red}
+                    alt="Red"
+                    className="Home__especialidades__img"
+                  />{" "}
+                  <div className="Home__especialidades__text">
+                    Red sensorica
+                  </div>
+                </div>
+                <div
+                  className="Home__especialidades__item"
+                  onClick={() => {
+                    this.handleEspecialidades("Analisis");
+                  }}
+                >
+                  <img
+                    src={Grafico}
+                    alt="Analisis"
+                    className="Home__especialidades__img__1"
+                  />{" "}
+                  <div className="Home__especialidades__text">
+                    Análisis de datos
+                  </div>
+                </div>
+                <div
+                  className="Home__especialidades__item"
+                  onClick={() => {
+                    this.handleEspecialidades("Diagnostico");
+                  }}
+                >
+                  <img
+                    src={Diagnostico}
+                    alt="Diagnostico"
+                    className="Home__especialidades__img"
+                  />{" "}
+                  <div className="Home__especialidades__text">
+                    Diagnostico en línea
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="Blank__space"></div>
             <div className="Blank__space"></div>
 
             <div className="Home__especialidades__info">
@@ -441,14 +446,22 @@ class Home extends React.Component {
                     mucho la atención vitual.
                   </div>
                 </div>
+                <div className="Blank__space"></div>
                 <Link to="/PyS" className="text-reset text-decoration-none">
                   <div className="Home__especialidades__info__text__button">
                     CONOCE MÁS DE NUESTROS PRODUCTOS
                   </div>
                 </Link>
               </div>
+              <div className="Home__especialidades__info__img__outter">
+                <img
+                  src={Telemedicina_info}
+                  alt="Telemedicina"
+                  className="Home__especialidades__info__img__1"
+                />{" "}
+              </div>
             </div>
-            <div className="Blank__space"></div>
+            <div className="Blank__space disap"></div>
           </div>
         </div>
       </React.Fragment>

@@ -6,6 +6,13 @@
   .Login__container__service__select {
     visibility: inherit;
   }
+  .Navbar__Menu__Menu__Phone {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0, -50%);
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1100px) {
@@ -17,6 +24,62 @@
     visibility: hidden;
     display: none;
   }
+
+  .Navbar__Menu__Menu__Phone {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0, -50%);
+  }
+}
+
+.Navbar__side__menu {
+  height: 100vh;
+  width: 0;
+  position: absolute;
+  z-index: 90;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  font-size: 20px;
+}
+
+.Side__menu__link {
+  display: flex;
+}
+
+.Navbar__side__menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #818181;
+  display: flex;
+  transition: 0.3s;
+}
+
+.Line__height {
+  line-height: 45px;
+}
+
+.Navbar__side__menu a:hover {
+  color: #000000;
+}
+
+.Navbar__side__menu .Navbar__closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.Navbar__Menu__Menu__Phone {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0, -50%);
 }
 
 .Menubar__outer {
@@ -25,7 +88,7 @@
   position: relative;
   box-shadow: 0 1px 8px rgb(0 0 0 / 50%);
   background-color: rgb(255, 255, 255);
-  z-index: 100;
+  z-index: 89;
 }
 
 .MenuBar__inner {
