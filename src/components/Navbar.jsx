@@ -67,6 +67,7 @@ class Navbar extends React.Component {
       Entrance_menu: true,
     });
   };
+
   render() {
     return (
       <React.Fragment>
@@ -92,7 +93,7 @@ class Navbar extends React.Component {
           </Link>
 
           <Link
-            to="/Tienda"
+            to="/PyS"
             className="text-reset text-decoration-none"
             onClick={this.handleSidebarCloseMenu}
           >

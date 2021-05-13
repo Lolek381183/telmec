@@ -7,10 +7,6 @@
     visibility: inherit;
   }
   .Navbar__Menu__Menu__Phone {
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(0, -50%);
     display: none;
   }
 }
@@ -23,13 +19,6 @@
   .Login__container__service__select {
     visibility: hidden;
     display: none;
-  }
-
-  .Navbar__Menu__Menu__Phone {
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(0, -50%);
   }
 }
 
@@ -45,10 +34,6 @@
   transition: 0.5s;
   padding-top: 60px;
   font-size: 20px;
-}
-
-.Side__menu__link {
-  display: flex;
 }
 
 .Navbar__side__menu a {
