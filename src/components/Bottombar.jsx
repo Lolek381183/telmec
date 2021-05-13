@@ -1,9 +1,11 @@
 import React from "react";
-import "./styles/Bottombar.css";
+
 import MEC from "../images/logogris.png";
 import Location from "../images/Location_icono.png";
 import Email from "../images/Email_icono.png";
 import Telefono from "../images/Telefono_icono.png";
+
+import "./styles/Bottombar.css";
 
 class Bottombar extends React.Component {
   render() {

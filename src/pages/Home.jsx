@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import home from "../images/EIATmedicalhub.jpg";
 import Arrow from "../images/Arrow1.png";
@@ -13,7 +14,6 @@ import Diagnostico from "../images/Diagnostico.png";
 import Telemedicina_info from "../images/—Pngtree—computer mac_4971106.png";
 
 import "./styles/Home.css";
-import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   componentDidMount() {

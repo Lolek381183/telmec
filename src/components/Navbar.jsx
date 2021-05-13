@@ -1,10 +1,12 @@
 import React from "react";
-import "./styles/Navbar.css";
-import Logo from "../images/Logo.png";
-import Arrow from "../images/arrow.png";
-import Menu from "../images/Menu.png";
 import Axios from "axios";
 import { Link } from "react-router-dom";
+
+import Logo from "../images/Logo.png";
+import Arrow from "../images/arrow.png";
+import Menu from "../images/menu.svg";
+
+import "./styles/Navbar.css";
 
 class Navbar extends React.Component {
   constructor(props) {
