@@ -135,7 +135,7 @@ class Home extends React.Component {
                     onClick={this.nextContent}
                   />
 
-                  <video className="video__img" autoPlay loop muted>
+                  <video className="video__img" playsInline autoPlay loop muted>
                     <source src={`${Demostrarion}`} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
