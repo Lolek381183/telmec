@@ -64,10 +64,12 @@
 
   .iphone__img {
     height: 500px;
+    z-index: 2;
   }
 
   .video__img {
     height: 475px;
+    z-index: 1;
   }
 
   .PyS__Telemedicina__inner__img__1__logo {
@@ -83,6 +85,14 @@
   .PyS__Telemedicina__inner__img__inner {
     width: 100%;
     grid-template-columns: 30% 70%;
+  }
+
+  .PyS__Telemedicina__inner__img__inner__manilla {
+    height: 600px;
+  }
+
+  .PyS__Telemedicina__inner__img__inner__iphone {
+    height: 600px;
   }
 }
 
@@ -140,10 +150,12 @@
 
   .iphone__img {
     height: 400px;
+    z-index: 2;
   }
 
   .video__img {
     height: 375px;
+    z-index: 1;
   }
 
   .PyS__Telemedicina__inner__img__1__logo {
@@ -159,6 +171,14 @@
   .PyS__Telemedicina__inner__img__inner {
     width: 100%;
     grid-template-columns: 30% 70%;
+  }
+
+  .PyS__Telemedicina__inner__img__inner__manilla {
+    height: 600px;
+  }
+
+  .PyS__Telemedicina__inner__img__inner__iphone {
+    height: 600px;
   }
 }
 
@@ -203,10 +223,12 @@
 
   .iphone__img {
     height: 400px;
+    z-index: 1;
   }
 
   .video__img {
     height: 375px;
+    z-index: 2;
   }
 
   .PyS__Telemedicina__inner__img__1__logo {
@@ -220,6 +242,14 @@
     left: 50%;
     transform: translate(-50%, 0);
     grid-template-columns: 20% 70%;
+  }
+
+  .PyS__Telemedicina__inner__img__inner__manilla {
+    height: 450px;
+  }
+
+  .PyS__Telemedicina__inner__img__inner__iphone {
+    height: 450px;
   }
 }
 
@@ -250,7 +280,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  z-index: 2;
 }
 
 .video__img {
@@ -259,7 +288,6 @@
   transform: translate(-50%, -50%);
   position: absolute;
   padding-left: 4px;
-  z-index: 1;
 }
 
 .PyS__Telemedicina__inner__img__1__logo {
@@ -316,12 +344,10 @@
 }
 
 .PyS__Telemedicina__inner__img__inner__manilla {
-  height: 600px;
   position: relative;
 }
 
 .PyS__Telemedicina__inner__img__inner__iphone {
-  height: 600px;
   width: 250px;
   position: relative;
 }
