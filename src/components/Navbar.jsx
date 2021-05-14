@@ -13,10 +13,11 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       login: true,
+      superLogin: true,
       nombre: "",
       Entrance_menu: true,
       Entrance_link: "Portal TeleHealth mec",
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
     };
   }
 
@@ -24,12 +25,16 @@ class Navbar extends React.Component {
     Axios.get(this.state.backend + "/profile", {
       withCredentials: true,
     }).then((response) => {
-      console.log(response);
       if (response.data.auth) {
         this.setState({
           login: false,
           nombre: response.data.nombre,
         });
+        if (response.data.nombre === "Almighty") {
+          this.setState({
+            superLogin: false,
+          });
+        }
       }
     });
   }
@@ -168,9 +173,29 @@ class Navbar extends React.Component {
                   className=" text-reset text-decoration-none"
                 >
                   <div className="Link__container">
-                    <span>Consulta NP</span>
+                    <span>Consulta</span>
                   </div>
                 </Link>
+                <Link
+                  to="/consultaNP"
+                  className=" text-reset text-decoration-none"
+                >
+                  <div className="Link__container">
+                    <span>Historias</span>
+                  </div>
+                </Link>
+                {this.state.superLogin ? (
+                  ""
+                ) : (
+                  <Link
+                    to="/medicos"
+                    className=" text-reset text-decoration-none"
+                  >
+                    <div className="Link__container">
+                      <span>Médicos</span>
+                    </div>
+                  </Link>
+                )}
               </div>
             )}
 

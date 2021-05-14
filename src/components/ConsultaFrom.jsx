@@ -1,6 +1,5 @@
 import React from "react";
 import Axios from "axios";
-import "./styles/RegisterForm.css";
 
 class ConsultaForm extends React.Component {
   constructor(props) {
@@ -8,7 +7,7 @@ class ConsultaForm extends React.Component {
     this.state = {
       counter: 0,
       Paciente_encontrado: "",
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
       Numero_identificacion: this.props.Numero_identificacion,
       form: {
         Primer_nombre: "",
@@ -135,19 +134,23 @@ class ConsultaForm extends React.Component {
 
   addHistory = (e) => {
     console.log(this.state.form1);
-    Axios.post(this.state.backend + "/createhistory", {
-      Numero_identificacion: this.state.Numero_identificacion,
-      Motivo_consulta: this.state.form1.Motivo_consulta,
-      Enfermedad_actual: this.state.form1.Enfermedad_actual,
-      Revision_sistemas: this.state.form1.Revision_sistemas,
-      Antecedentes_personales: this.state.form1.Antecedentes_personales,
-      Examen_fisico: this.state.form1.Examen_fisico,
-      Ayudas_diagnosticas: this.state.form1.Ayudas_diagnosticas,
-      Diagnostico: this.state.form1.Diagnostico,
-      Analisis: this.state.form1.Analisis,
-      Conducta: this.state.form1.Conducta,
-      Observaciones: this.state.form1.Observaciones,
-    }).then((response) => {
+    Axios.post(
+      this.state.backend + "/createhistory",
+      {
+        Numero_identificacion: this.state.Numero_identificacion,
+        Motivo_consulta: this.state.form1.Motivo_consulta,
+        Enfermedad_actual: this.state.form1.Enfermedad_actual,
+        Revision_sistemas: this.state.form1.Revision_sistemas,
+        Antecedentes_personales: this.state.form1.Antecedentes_personales,
+        Examen_fisico: this.state.form1.Examen_fisico,
+        Ayudas_diagnosticas: this.state.form1.Ayudas_diagnosticas,
+        Diagnostico: this.state.form1.Diagnostico,
+        Analisis: this.state.form1.Analisis,
+        Conducta: this.state.form1.Conducta,
+        Observaciones: this.state.form1.Observaciones,
+      },
+      { withCredentials: true }
+    ).then((response) => {
       alert("Historia Creada");
       console.log(response);
     });
@@ -155,6 +158,7 @@ class ConsultaForm extends React.Component {
 
   lookPatient = (e) => {
     Axios.get(this.state.backend + "/look", {
+      withCredentials: true,
       params: {
         Numero_identificacion: this.state.Numero_identificacion,
       },

@@ -2,40 +2,38 @@ import React from "react";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 
-import "./styles/ConsultaNp.css";
+import "./styles/Consulta.css";
 import Presencial from "../images/Presencial.png";
 import Virtual from "../images/Virtual.png";
 import Maleta from "../images/Maleta.png";
 
-class newRegister extends React.Component {
+class Consulta extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
       form: {
         Numero_identificacion_buscar: "",
         Maleta: "",
       },
     };
+    Axios.get(this.state.backend + "/profile", {
+      withCredentials: true,
+    }).then((response) => {
+      if (response.data.error) {
+        this.props.history.push("/login");
+      }
+    });
   }
   componentDidMount() {
     document.getElementById("Buscar").style.display = "block";
     document.getElementById("Seleccionar").style.display = "none";
     document.getElementById("Seleccionar_Maleta").style.display = "none";
-    Axios.get(this.state.backend + "/profile", {
-      withCredentials: true,
-    })
-      .then((response) => {
-        if (response) {
-        }
-      })
-      .catch((error) => {
-        this.props.history.push("/login");
-      });
   }
 
   lookPatient = (e) => {
     Axios.get(this.state.backend + "/look", {
+      withCredentials: true,
       params: {
         Numero_identificacion: this.state.form.Numero_identificacion_buscar,
       },
@@ -193,4 +191,4 @@ class newRegister extends React.Component {
   }
 }
 
-export default newRegister;
+export default Consulta;

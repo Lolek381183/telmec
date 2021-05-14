@@ -17,7 +17,7 @@ class RoomPrivate extends React.Component {
       localMediaAvailable: true,
       hasJoinedRoom: false,
       activeRoom: null,
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
       form: {
         Numero_identificacion: "",
       },
@@ -31,9 +31,8 @@ class RoomPrivate extends React.Component {
     this.attachTrack = this.attachTrack.bind(this);
     this.participantConnected = this.participantConnected.bind(this);
     this.getTracks = this.getTracks.bind(this);
-    this.onParticipantUnpublishedTrack = this.onParticipantUnpublishedTrack.bind(
-      this
-    );
+    this.onParticipantUnpublishedTrack =
+      this.onParticipantUnpublishedTrack.bind(this);
   }
   componentDidMount() {
     Axios.get(this.state.backend + "/token").then((results) => {

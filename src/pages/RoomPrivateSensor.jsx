@@ -17,9 +17,16 @@ class RoomPrivate extends React.Component {
       localMediaAvailable: true,
       hasJoinedRoom: false,
       activeRoom: null,
-      backend: "https://backend.telemec.health",
+      backend: "http://localhost:3001",
       messageList: [],
     };
+    Axios.get(this.state.backend + "/profile", {
+      withCredentials: true,
+    }).then((response) => {
+      if (response.data.error) {
+        this.props.history.push("/login");
+      }
+    });
     this.fersd = React.createRef();
     this.joinRoom = this.joinRoom.bind(this);
     this.roomJoined = this.roomJoined.bind(this);
@@ -29,22 +36,10 @@ class RoomPrivate extends React.Component {
     this.attachTrack = this.attachTrack.bind(this);
     this.participantConnected = this.participantConnected.bind(this);
     this.getTracks = this.getTracks.bind(this);
-    this.onParticipantUnpublishedTrack = this.onParticipantUnpublishedTrack.bind(
-      this
-    );
+    this.onParticipantUnpublishedTrack =
+      this.onParticipantUnpublishedTrack.bind(this);
   }
   componentDidMount() {
-    Axios.get(this.state.backend + "/profile", {
-      withCredentials: true,
-    })
-      .then((response) => {
-        if (response) {
-        }
-      })
-      .catch((error) => {
-        this.props.history.push("/login");
-      });
-
     Axios.get(this.state.backend + "/token").then((results) => {
       const { identity, token } = results.data;
       console.log(results.data);
