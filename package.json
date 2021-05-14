@@ -21,13 +21,13 @@
     "react-toasts": "^3.0.6",
     "socket.io-client": "^4.0.2",
     "twilio-video": "^2.12.0",
-    "web-vitals": "^1.1.0",
-    "webpack": "^5.37.0"
+    "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack --mode development --watch",
-    "start": "node server.js"
+    "start": "node index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
